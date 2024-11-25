@@ -1,0 +1,148 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #121212; /* Darker background for sleek feel */
+  color: #d4d4d4; /* Subtle light text */
+}
+
+.lists-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.create-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.create-container button {
+  background: linear-gradient(90deg, #39ff14, #0bc36b); /* iQiyi-like neon green gradient */
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(57, 255, 20, 0.5); /* Glow effect */
+  transition: all 0.3s ease-in-out;
+}
+
+.create-container button:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 12px rgba(57, 255, 20, 0.8);
+}
+
+.table-container {
+  overflow-x: auto;
+  background-color: #1f1f1f; /* Slightly lighter for separation */
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.movie-lists {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.movie-lists thead {
+  background: linear-gradient(90deg, #39ff14, #0bc36b); /* Green gradient for header */
+}
+
+.movie-lists th {
+  padding: 15px;
+  text-align: left;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+}
+
+.movie-lists tr {
+  transition: background-color 0.3s ease;
+}
+
+.movie-lists tr:hover {
+  background-color: #252525; /* Highlight effect */
+}
+
+.movie-lists td {
+  padding: 15px;
+  font-size: 16px;
+  border-bottom: 1px solid #2c2c2c;
+  color: #d4d4d4;
+}
+
+.movie-lists td:last-child {
+  text-align: center;
+}
+
+.movie-lists td button {
+  background: linear-gradient(90deg, #39ff14, #0bc36b); /* Vibrant green gradient for buttons */
+  color: #000;
+  font-size: 14px;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 10px;
+}
+
+.movie-lists td button:last-child {
+  background: linear-gradient(90deg, #ff5252, #ff1744); /* Red gradient for delete */
+}
+
+.movie-lists td button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 10px rgba(57, 255, 20, 0.5);
+}
+
+/* Logout Button - Fixed position, separate from body */
+.logout-button {
+  position: fixed;
+  top: 20px; /* Adjust top position */
+  right: 20px; /* Align to the right */
+  background: linear-gradient(90deg, #8a2be2, #4b0082); /* Purple/Blue gradient */
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0px 4px 12px rgba(75, 0, 130, 0.6); /* Purple glow effect */
+  transition: all 0.3s ease-in-out;
+}
+
+.logout-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 14px rgba(75, 0, 130, 0.8);
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+  .movie-lists th,
+  .movie-lists td {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .create-container button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .movie-lists td button {
+    font-size: 12px;
+    padding: 6px 15px;
+  }
+
+  .logout-button {
+    font-size: 14px;
+    padding: 10px 25px;
+  }
+}
