@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useCallback, useEffect, useState } from 'react';
-import { Outlet, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './Form.css';
 
 const Form = () => {
@@ -23,11 +23,10 @@ const Form = () => {
       headers: {
         Accept: 'application/json',
         Authorization:
-          'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMTljYjFjZDgyMzc0ZjEyNzg0OThmNjUzODgwZTAzNyIsIm5iZiI6MTczMzMwMTEyOC4yOSwic3ViIjoiNjc1MDEzODg4MDEyZjkzZGJjNjk5YzZjIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.3OgGYzjxsWYnyqHHqtxSFJUC7njqWUFVacEvEzCC9Q4',
+          'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMTljYjFjZDgyMzc0ZjEyNzg0OThmNjUzODgwZTAzNyIsIm5iZiI6MTczMzMwMTEyOC4yOSwic3ViIjoiNjc1MDEzODg4MDEyZjkzZGJjNjk5YzZjIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.3OgGYzjxsWYnyqHHqtxSFJUC7njqWUFVacEvEzCC9Q4',  // Replace with your valid token
       },
     }).then((response) => {
       setSearchedMovieList(response.data.results);
-      console.log(response.data.results);
     });
   }, [query]);
 
@@ -37,7 +36,6 @@ const Form = () => {
 
   const handleSave = () => {
     const accessToken = localStorage.getItem('accessToken');
-    console.log(accessToken);
     if (selectedMovie === undefined) {
       alert('Please search and select a movie.');
     } else {
@@ -62,7 +60,6 @@ const Form = () => {
         },
       })
         .then((saveResponse) => {
-          console.log(saveResponse);
           alert('Success');
         })
         .catch((error) => console.log(error));
@@ -84,7 +81,6 @@ const Form = () => {
           vote_average: response.data.voteAverage,
         };
         setSelectedMovie(tempData);
-        console.log(response.data);
       });
     }
   }, [movieId]);
@@ -94,7 +90,7 @@ const Form = () => {
     axios.get(`https://api.themoviedb.org/3/movie/${movieId}/credits`, {
       headers: {
         Authorization:
-          'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMTljYjFjZDgyMzc0ZjEyNzg0OThmNjUzODgwZTAzNyIsIm5iZiI6MTczMzMwMTEyOC4yOSwic3ViIjoiNjc1MDEzODg4MDEyZjkzZGJjNjk5YzZjIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.3OgGYzjxsWYnyqHHqtxSFJUC7njqWUFVacEvEzCC9Q4',
+          'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMTljYjFjZDgyMzc0ZjEyNzg0OThmNjUzODgwZTAzNyIsIm5iZiI6MTczMzMwMTEyOC4yOSwic3ViIjoiNjc1MDEzODg4MDEyZjkzZGJjNjk5YzZjIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.3OgGYzjxsWYnyqHHqtxSFJUC7njqWUFVacEvEzCC9Q4',  // Replace with your valid token
       },
     })
     .then((response) => setCastAndCrew(response.data));
@@ -105,7 +101,7 @@ const Form = () => {
     axios.get(`https://api.themoviedb.org/3/movie/${movieId}/images`, {
       headers: {
         Authorization:
-          'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMTljYjFjZDgyMzc0ZjEyNzg0OThmNjUzODgwZTAzNyIsIm5iZiI6MTczMzMwMTEyOC4yOSwic3ViIjoiNjc1MDEzODg4MDEyZjkzZGJjNjk5YzZjIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.3OgGYzjxsWYnyqHHqtxSFJUC7njqWUFVacEvEzCC9Q4',
+          'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMTljYjFjZDgyMzc0ZjEyNzg0OThmNjUzODgwZTAzNyIsIm5iZiI6MTczMzMwMTEyOC4yOSwic3ViIjoiNjc1MDEzODg4MDEyZjkzZGJjNjk5YzZjIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.3OgGYzjxsWYnyqHHqtxSFJUC7njqWUFVacEvEzCC9Q4',  // Replace with your valid token
       },
     })
     .then((response) => setPhotos(response.data));
@@ -116,7 +112,7 @@ const Form = () => {
     axios.get(`https://api.themoviedb.org/3/movie/${movieId}/videos`, {
       headers: {
         Authorization:
-          'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMTljYjFjZDgyMzc0ZjEyNzg0OThmNjUzODgwZTAzNyIsIm5iZiI6MTczMzMwMTEyOC4yOSwic3ViIjoiNjc1MDEzODg4MDEyZjkzZGJjNjk5YzZjIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.3OgGYzjxsWYnyqHHqtxSFJUC7njqWUFVacEvEzCC9Q4',
+          'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMTljYjFjZDgyMzc0ZjEyNzg0OThmNjUzODgwZTAzNyIsIm5iZiI6MTczMzMwMTEyOC4yOSwic3ViIjoiNjc1MDEzODg4MDEyZjkzZGJjNjk5YzZjIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.3OgGYzjxsWYnyqHHqtxSFJUC7njqWUFVacEvEzCC9Q4',  // Replace with your valid token
       },
     })
     .then((response) => setVideos(response.data));
@@ -238,16 +234,34 @@ const Form = () => {
             {activeTab === 'cast' && castAndCrew && (
               <div>
                 <h3>Cast & Crew</h3>
-                <ul>
+                <div className='cast-crew-list'>
                   {castAndCrew.cast.map((cast) => (
-                    <li key={cast.id}>{cast.name}</li>
+                    <div key={cast.id} className='cast-crew-box'>
+                      {cast.profile_path && (
+                        <img
+                          className='cast-crew-image'
+                          src={`https://image.tmdb.org/t/p/original/${cast.profile_path}`}
+                          alt={cast.name}
+                        />
+                      )}
+                      <p>{cast.name}</p>
+                      <p>{cast.character}</p>
+                    </div>
                   ))}
-                </ul>
-                <ul>
                   {castAndCrew.crew.map((crew) => (
-                    <li key={crew.id}>{crew.name}</li>
+                    <div key={crew.id} className='cast-crew-box'>
+                      {crew.profile_path && (
+                        <img
+                          className='cast-crew-image'
+                          src={`https://image.tmdb.org/t/p/original/${crew.profile_path}`}
+                          alt={crew.name}
+                        />
+                      )}
+                      <p>{crew.name}</p>
+                      <p>{crew.job}</p>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
             )}
 
@@ -267,22 +281,33 @@ const Form = () => {
               </div>
             )}
 
-            {activeTab === 'videos' && videos && (
+            {activeTab === 'videos' && videos && videos.results && (
               <div>
                 <h3>Videos</h3>
-                <ul>
+                <div className='videos-list'>
                   {videos.results.map((video) => (
-                    <li key={video.id}>
+                    <div key={video.id} className='video-item'>
                       <a
                         href={`https://www.youtube.com/watch?v=${video.key}`}
                         target='_blank'
                         rel='noopener noreferrer'
+                        className='video-link'
                       >
-                        {video.name}
+                        <div className='video-box'>
+                          <p>{video.name}</p>
+                          <iframe
+                            width="280"
+                            height="160"
+                            src={`https://www.youtube.com/embed/${video.key}`}
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                          ></iframe>
+                        </div>
                       </a>
-                    </li>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
             )}
           </div>
