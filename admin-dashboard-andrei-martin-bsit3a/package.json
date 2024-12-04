@@ -9,12 +9,10 @@
     "admin-dashboard-andrei-martin-bsit3a": "file:",
     "axios": "^1.7.7",
     "http-proxy-middleware": "^3.0.3",
-    "nod": "^0.2.0",
-    "node": "^20.18.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.2",
-    "react-scripts": "^5.0.1",
+    "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

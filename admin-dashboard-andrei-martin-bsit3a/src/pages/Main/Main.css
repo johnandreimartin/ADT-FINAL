@@ -10,10 +10,9 @@
 .Main .container .outlet {
   flex-grow: 3;
   padding: 1rem;
-  overflow-y: auto;
 }
 .Main .container .navigation {
-  background-color: aliceblue;
+  background-color: #121212(0, 0%, 0%);
   padding-top: 40px;
   height: 100vh;
 }
@@ -29,7 +28,7 @@
 }
 .Main .container .navigation ul li.active,
 .Main .container .navigation ul li:hover {
-  background: #ccc;
+  background: #ebe3e3;
 }
 .Main .container .navigation ul li a {
   text-decoration: none;

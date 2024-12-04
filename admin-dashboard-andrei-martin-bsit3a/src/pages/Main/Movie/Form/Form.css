@@ -30,3 +30,30 @@ nav li {
   border-width: 1px 1px 0 1px;
   margin: 0 5px 0 0;
 }
+
+button {
+  width: 100px;  /* Set the desired width */
+  height: 40px;  /* Set the desired height */
+  padding: 10px;  /* Optional: Adjust padding if necessary */
+  font-size: 16px; /* Set the font size for consistency */
+  text-align: center;  /* Ensure the text is centered */
+  border: none;  /* Remove border if not needed */
+  border-radius: 4px;  /* Optional: Add border radius for rounded corners */
+  background-color: #007bff;  /* Change to desired background color */
+  color: white;  /* Set text color */
+  cursor: pointer;  /* Change cursor to indicate clickable button */
+}
+
+button:hover {
+  background-color: #0056b3;  /* Optional: Change background on hover */
+}
+
+.searched-movie {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 2px solid #ccc;  /* Border color and thickness */
+  border-radius: 3px;  /* Optional: Add rounded corners */
+  padding: 10px;  /* Optional: Add padding inside the container */
+  margin-top: 10px;  /* Optional: Add space above the container */
+  background-color: #f9f9f9;  /* Optional: Background color for the search container */
+}

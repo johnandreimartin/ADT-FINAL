@@ -197,7 +197,6 @@ const Form = () => {
   return (
     <>
       <h1>{movieId !== undefined ? "Edit" : "Create"} Movie</h1>
-      <p>- Fixed search and update bug</p>
       {error && <div className="error-message">{error}</div>}
       {isLoading && <div className="loading-message">Loading...</div>}
 

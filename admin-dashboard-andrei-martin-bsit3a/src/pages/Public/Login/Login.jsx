@@ -14,6 +14,7 @@ function Login() {
   const userInputDebounce = useDebounce({ email, password }, 2000);
   const [debounceState, setDebounceState] = useState(false);
   const [status, setStatus] = useState('idle');
+  const [errorMessage, setErrorMessage] = useState(''); // Add error message state
 
   const navigate = useNavigate();
 
@@ -28,7 +29,6 @@ function Login() {
     switch (type) {
       case 'email':
         setEmail(event.target.value);
-
         break;
 
       case 'password':
@@ -45,23 +45,20 @@ function Login() {
     setStatus('loading');
     console.log(data);
 
-    await axios({
-      method: 'post',
-      url: '/admin/login',
-      data,
-      headers: { 'Access-Control-Allow-Origin': '*' },
-    })
-      .then((res) => {
-        console.log(res);
-        localStorage.setItem('accessToken', res.data.access_token);
-        navigate('/main/dashboard');
-        setStatus('idle');
-      })
-      .catch((e) => {
-        console.log(e);
-        setStatus('idle');
-        // alert(e.response.data.message);
+    try {
+      const res = await axios.post('/admin/login', data, {
+        headers: { 'Access-Control-Allow-Origin': '*' },
       });
+
+      console.log(res);
+      localStorage.setItem('accessToken', res.data.access_token);
+      navigate('/main/dashboard');
+      setStatus('idle');
+    } catch (e) {
+      console.error(e);
+      setStatus('idle');
+      setErrorMessage('Invalid credentials. Please try again.'); // Show error message
+    }
   };
 
   useEffect(() => {
@@ -105,6 +102,8 @@ function Login() {
             <div className='show-password' onClick={handleShowPassword}>
               {isShowPassword ? 'Hide' : 'Show'} Password
             </div>
+
+            {errorMessage && <div className="error-message">{errorMessage}</div>} {/* Error notification */}
 
             <div className='submit-container'>
               <button
