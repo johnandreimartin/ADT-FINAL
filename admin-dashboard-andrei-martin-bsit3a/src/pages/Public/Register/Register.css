@@ -68,39 +68,13 @@ h3 {
   margin-top: 5px;
 }
 
-/* Container for password input and emoji icon */
-.password-container {
-  position: relative;
-  width: 100%;
-}
-
-/* Styling the password input */
-.password-container input {
-  width: 100%;
-  padding: 12px;
-  padding-right: 40px; /* Space for the emoji icon */
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
-  color: #333;
-}
-
-.password-container input:focus {
-  outline: none;
-  border-color: #0056b3;
-  box-shadow: 0 0 5px rgba(0, 87, 179, 0.2);
-}
-
-/* Styling the show/hide emoji icon */
-.show-password-icon {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
+/* Show/hide password link */
+.show-password {
+  font-size: 12px;
+  color: #0056b3;
   cursor: pointer;
-  font-size: 18px;
+  margin-top: 10px;
 }
-
 
 /* Submit button container */
 .submit-container {
