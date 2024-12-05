@@ -16,15 +16,155 @@
   aspect-ratio: 16 / 9;
 }
 .featured-backdrop {
-  height: 100%;
+  height: 500px;
   width: 100%;
-  background-size: cover !important;
   display: flex;
-  align-items: end;
+  align-items: flex-end;
+  justify-content: center;
+  color: white;
+  padding: 20px;
+  box-shadow: inset 0 -50px 50px rgba(0, 0, 0, 0.7);
+  border-radius: 50px;
 }
+
 .featured-movie-title {
+  font-size: 24px;
   font-weight: bold;
-  font-size: 3rem;
-  width: 100%;
-  padding: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
+
+.search-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.search-bar {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 250px;
+  outline: none;
+}
+
+.search-bar:focus {
+  border-color: #007bff;
+}
+
+.main-container {
+  background-color: #121212;
+  color: white;
+}
+
+.page-title {
+  font-size: 32px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.search-bar {
+  padding: 8px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.featured-list-container {
+  position: relative;
+  margin: 20px auto;
+  width: 90%;
+  height: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.featured-backdrop {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-size: cover;
+}
+
+.featured-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+.featured-poster {
+  height: 250px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.featured-details {
+  max-width: 500px;
+}
+
+.featured-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.featured-description {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.watch-now-btn {
+  padding: 10px 20px;
+  background-color: #e50914;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.watch-now-btn:hover {
+  background-color: #f40612;
+}
+
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 10;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+.list-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+

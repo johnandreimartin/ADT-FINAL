@@ -5,8 +5,10 @@ import './Main.css';
 function Main() {
   const accessToken = localStorage.getItem('accessToken');
   const navigate = useNavigate();
+  
   const handleLogout = () => {
     localStorage.removeItem('accessToken');
+    navigate('/'); // Redirect to homepage after logout
   };
 
   useEffect(() => {
@@ -17,18 +19,19 @@ function Main() {
     ) {
       handleLogout();
     }
-  }, []);
+  }, [accessToken, navigate]);
+
   return (
     <div className='Main'>
       <div className='container'>
         <div className='navigation'>
           <ul>
             <li>
-              <a onClick={() => navigate('/')}>Movies</a>
+              <a onClick={() => navigate('/')}>Logout</a>
             </li>
             {accessToken ? (
-              <li className='logout'>
-                <a onClick={handleLogout}>Logout</a>
+              <li className='movies'>
+                <a onClick={() => navigate('/Home')}>Movies</a> {/* Redirect to movies page */}
               </li>
             ) : (
               <li className='login'>
