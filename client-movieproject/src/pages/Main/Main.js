@@ -5,7 +5,7 @@ import './Main.css';
 function Main() {
   const accessToken = localStorage.getItem('accessToken');
   const navigate = useNavigate();
-  
+
   const handleLogout = () => {
     localStorage.removeItem('accessToken');
     navigate('/'); // Redirect to homepage after logout
@@ -26,12 +26,19 @@ function Main() {
       <div className='container'>
         <div className='navigation'>
           <ul>
-            <li>
+            <li className='logout'>
               <a onClick={() => navigate('/')}>Logout</a>
             </li>
             {accessToken ? (
               <li className='movies'>
-                <a onClick={() => navigate('/Home')}>Movies</a> {/* Redirect to movies page */}
+                <a
+                  onClick={() => {
+                    navigate('/Home');
+                    window.location.reload(); // Reload the page
+                  }}
+                >
+                  Movies
+                </a>
               </li>
             ) : (
               <li className='login'>

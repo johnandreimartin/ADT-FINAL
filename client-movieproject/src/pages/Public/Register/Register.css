@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #1c1c1c;
+}
+
+.register-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+}
+
+.register-banner {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.register-banner h1 {
+  font-size: 2.5rem;
+}
+
+.register-banner p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.register-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: white;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.errors {
+  color: red;
+  font-size: 0.8rem;
+}
+
+.show-password {
+  cursor: pointer;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.register-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: #e50914;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.register-button:disabled {
+  background-color: #444;
+  cursor: not-allowed;
+}
+
+.login-container a {
+  color: #e50914;
+  text-decoration: none;
+}
+
+.login-container a:hover {
+  text-decoration: underline;
+}

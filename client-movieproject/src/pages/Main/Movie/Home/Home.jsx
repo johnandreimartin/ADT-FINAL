@@ -18,7 +18,7 @@ const Home = () => {
       .get('/movies')
       .then((response) => {
         setMovieList(response.data);
-        setFeaturedMovie(response.data[0]); // Start with the first movie
+        setFeaturedMovie(response.data[0]); 
       })
       .catch((e) => console.log(e));
   };
@@ -57,7 +57,7 @@ const Home = () => {
     <div className='main-container'>
       <h1 className='page-title'>Movies</h1>
 
-      {/* Search Bar */}
+     
       <div className='search-container'>
         <input
           type='text'

@@ -1,37 +1,93 @@
-.form-container {
-  padding: 4rem 2rem;
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #1c1c1c;
+}
+
+.login-page {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
 }
-.form-container > div {
-  margin-bottom: 12px;
+
+.login-banner {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-banner h1 {
+  font-size: 2.5rem;
+}
+
+.login-banner p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.login-container {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  padding: 20px 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .form-group {
-  display: flex;
+  margin-bottom: 15px;
+  width: 100%;
 }
 
 .form-group label {
-  width: 70px;
-  margin-right: 8px;
-  text-align: left;
+  display: block;
+  margin-bottom: 5px;
 }
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
 .errors {
   color: red;
-  font-size: 12px;
+  font-size: 0.8rem;
 }
-.submit-container {
-  margin-top: 12px;
-  text-align: center;
-}
-.register-container {
-  text-align: center;
-}
+
 .show-password {
-  margin-bottom: 1rem;
   cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.login-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: #e50914;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-button:disabled {
+  background-color: #444;
+  cursor: not-allowed;
+}
+
+.register-container a {
+  color: #e50914;
+  text-decoration: none;
+}
+
+.register-container a:hover {
+  text-decoration: underline;
 }

@@ -1,61 +1,62 @@
+
 .Main {
-  display: flex;
-  overflow: hidden;
-  max-height: 100vh;
-}
-.Main .container {
+  font-family: Arial, sans-serif;
+  background-color: #15171B; 
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  width: 100vw;
-  height: 100vh;
-}
-.Main .container .outlet {
-  flex-grow: 3;
-  padding: 1rem;
-  overflow-y: auto;
-}
-.Main .container .navigation {
-  height: 80px;
-  background-color: #15171b;
-  width: 100%;
-}
-.Main .container .navigation ul {
-  list-style: none;
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
-  display: flex;
+  padding: 0 10px; 
 }
 
-.Main .container .navigation ul li {
-  padding: 0px 60px;
-  height: 80px;
+
+.container {
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+  flex-grow: 1; 
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #61dafb;
-  font-weight: bold;
+  box-sizing: border-box; 
 }
-.Main .container .navigation ul li a {
-  text-decoration: none;
-  color: #61dafb;
+
+
+.navigation ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
 }
-.Main .container .navigation ul li.active a,
-.Main .container .navigation ul li:hover a {
+
+.navigation li a {
   text-decoration: none;
+  color: #fffdfd;
+  padding: 10px 20px;
+  display: inline-block;
+}
+
+
+.navigation li.logout a,
+.navigation li.movies a {
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navigation li.logout a:hover,
+.navigation li.movies a:hover {
+  background-color: #333;
   color: white;
 }
-.Main .container .navigation ul li.active,
-.Main .container .navigation ul li:hover {
-  background: #353a43;
-}
-.Main .container .navigation ul li a {
-  text-decoration: none;
-}
 
-.Main .container .navigation ul li.logout,
-.Main .container .navigation ul li.login {
-  cursor: pointer;
-  justify-self: end;
+
+.outlet {
+  flex-grow: 1;
+  background-color: #15171B; 
+  border: 2px solid #ffffff; 
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: auto; 
+  box-sizing: border-box;
 }

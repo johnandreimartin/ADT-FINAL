@@ -40,7 +40,7 @@
   .back-button {
     background-color: #f14141;
     border: 1px solid #000000;
-    color: #333;
+    color: #ffffff;
     padding: 10px 15px;
     margin-bottom: 20px;
     border-radius: 5px;
@@ -51,53 +51,108 @@
     background-color: #cf3b3b;
     border-color: #c24f4f;
   }
-  
-  .view-container {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-  }
-  
-  .movie-banner {
-    margin-bottom: 20px;
-  }
-  
   .movie-details-container {
     display: flex;
     align-items: flex-start;
     gap: 20px;
   }
   
-  
-  .movie-info {
-    flex: 1;
-  }
-  
-  .movie-title {
-    font-size: 2rem;
-    margin-bottom: 10px;
-  }
-  
-  .movie-overview {
-    margin-bottom: 15px;
-    line-height: 1.5;
-  }
-  
-  .form-container {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .form-content {
-    position: relative;
-    z-index: 1;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 600px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
+  /* General styles */
+.view-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.movie-banner {
+  margin-bottom: 20px;
+}
+
+.movie-thumbnail {
+  max-width: 200px;
+  border-radius: 10px;
+}
+
+.movie-info {
+  margin-left: 20px;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.tab-border {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.active {
+  background-color: #ddd;
+}
+
+/* Cast & Crew styles */
+.cast-crew {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.cast-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cast-item {
+  text-align: center;
+  width: 120px;
+}
+
+.cast-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+/* Photos section styles */
+.photos-section {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.photos-list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.photo-item {
+  max-width: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Videos section styles */
+.videos-section {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.video-item {
+  margin-bottom: 20px;
+}
+
+.video-iframe {
+  width: 280px;
+  height: 160px;
+  border-radius: 10px;
+}

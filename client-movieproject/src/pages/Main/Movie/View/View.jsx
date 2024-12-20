@@ -25,7 +25,7 @@ const View = () => {
       axios
         .get(`https://api.themoviedb.org/3/movie/${movie.tmdbId}/credits`, {
           headers: {
-            Authorization: 'Bearer <YOUR_API_KEY>',
+            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMTljYjFjZDgyMzc0ZjEyNzg0OThmNjUzODgwZTAzNyIsIm5iZiI6MTczMzMwMTEyOC4yOSwic3ViIjoiNjc1MDEzODg4MDEyZjkzZGJjNjk5YzZjIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.3OgGYzjxsWYnyqHHqtxSFJUC7njqWUFVacEvEzCC9Q4',
           },
         })
         .then((response) => setCastAndCrew(response.data));
@@ -37,7 +37,7 @@ const View = () => {
       axios
         .get(`https://api.themoviedb.org/3/movie/${movie.tmdbId}/images`, {
           headers: {
-            Authorization: 'Bearer <YOUR_API_KEY>',
+            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMTljYjFjZDgyMzc0ZjEyNzg0OThmNjUzODgwZTAzNyIsIm5iZiI6MTczMzMwMTEyOC4yOSwic3ViIjoiNjc1MDEzODg4MDEyZjkzZGJjNjk5YzZjIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.3OgGYzjxsWYnyqHHqtxSFJUC7njqWUFVacEvEzCC9Q4',
           },
         })
         .then((response) => setPhotos(response.data));
@@ -49,7 +49,7 @@ const View = () => {
       axios
         .get(`https://api.themoviedb.org/3/movie/${movie.tmdbId}/videos`, {
           headers: {
-            Authorization: 'Bearer <YOUR_API_KEY>',
+            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMTljYjFjZDgyMzc0ZjEyNzg0OThmNjUzODgwZTAzNyIsIm5iZiI6MTczMzMwMTEyOC4yOSwic3ViIjoiNjc1MDEzODg4MDEyZjkzZGJjNjk5YzZjIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.3OgGYzjxsWYnyqHHqtxSFJUC7njqWUFVacEvEzCC9Q4',
           },
         })
         .then((response) => setVideos(response.data));
@@ -158,24 +158,14 @@ const View = () => {
                 <div className="videos-list">
                   {videos.results.map((video) => (
                     <div key={video.id} className="video-item">
-                      <a
-                        href={`https://www.youtube.com/watch?v=${video.key}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="video-link"
-                      >
-                        <div className="video-box">
-                          <p>{video.name}</p>
-                          <iframe
-                            width="280"
-                            height="160"
-                            src={`https://www.youtube.com/embed/${video.key}`}
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                          ></iframe>
-                        </div>
-                      </a>
+                      <iframe
+                        className="video-iframe"
+                        src={`https://www.youtube.com/embed/${video.key}`}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      ></iframe>
+                      <p>{video.name}</p>
                     </div>
                   ))}
                 </div>
